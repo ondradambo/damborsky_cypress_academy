@@ -1,28 +1,11 @@
-export class NewProjectExercise {
+export class ProjectsPage extends HeaderSection {
   constructor() {
-    this.url = "https://tredgate.com/pmtool";
-    this.usernameInput = "#username"; // název prvku + jeho typ -> usernameInput
-    this.passwordInput = "#password";
-    this.loginButton = "[type='submit']";
-  }
-
-  clickProjects() {
-    cy.get(this.projectButton).click();
+    super();
+    this.addProjectButton = 'button[test_id="Add Project"]';
   }
 
   clickAddProject() {
     cy.get(this.addProjectButton).click();
-  }
-
-  typeName(Name) {
-    cy.get(this.usernameInput).type(Name);
-  }
-
-  clickSave() {
-    cy.get(this.saveButton).click();
-  }
-
-  clickLogoff() {
-    cy.get(this.logoffButton).click();
+    return new CreateNewProjectModal();
   }
 }
