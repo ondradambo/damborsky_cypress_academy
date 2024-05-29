@@ -50,4 +50,8 @@ describe("Forms tests", () => {
     cy.fixture("test.txt").as("uploadFile");
     cy.get("#file-upload").selectFile("@uploadFile");
   });
+
+  it("Type date", () => {
+    cy.get("#datepicker").type("1990-12-31").should("have.value", "1990-12-31");
+  });
 });
