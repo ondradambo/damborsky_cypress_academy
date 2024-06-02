@@ -1,17 +1,19 @@
+import { HeaderSection } from "../common/header_section";
+import { CreateNewTaskModal } from "./create_new_task_modal";
+
 export class TasksPage extends HeaderSection {
   constructor() {
     super();
-    this.profileButton = "#user_dropdown";
-    this.logoutButton = "#logout";
+    this.addTaskButton = '[test_id="Add Task"]';
+    this.projectInfoAnchorXPath = '//a[text()="Project Info"]';
   }
 
-  clickProfile() {
-    cy.get(this.profileButton).click();
-    return this;
+  clickAddTask() {
+    cy.get(this.addTaskButton).click();
+    return new CreateNewTaskModal();
   }
-
-  clickLogout() {
-    cy.get(this.logoutButton).click();
-    return new LoginPage();
+  clickProjectInfo() {
+    cy.xpath(this.projectInfoAnchorXPath).click();
+    return new ProjectInfoPage();
   }
 }

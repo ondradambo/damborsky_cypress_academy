@@ -51,7 +51,6 @@ export class LoginPage {
     cy.get(this.usernameInput).type(username);
     return this;
   }
-
   typePassword(password) {
     cy.get(this.passwordInput).type(password);
     return this;
