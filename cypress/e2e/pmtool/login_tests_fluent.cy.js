@@ -1,13 +1,19 @@
 import { LoginPage } from "../../page_objects/pmtool/login_page";
 
-describe("Fluent login tests", () => {
+describe("Fluent Login tests", () => {
+  beforeEach(() => {
+    new LoginPage().openPmtool();
+  });
+
   it("Login to pmtool using Fluent API test", () => {
     new LoginPage()
-      .openPmtool()
-      .typeUsername("cypress_zima_2024")
-      .typePassword("Zima2024Cypress")
+      .typeUsername("username")
+      .typePassword("password")
       .clickLogin()
       .clickProfile()
       .clickLogout();
+  });
+  it("Open lost password and get back to login", () => {
+    new LoginPage().clickPasswordForgotten().clickBack();
   });
 });
