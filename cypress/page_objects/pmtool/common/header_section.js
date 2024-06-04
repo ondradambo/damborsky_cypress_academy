@@ -1,12 +1,10 @@
-import { HeaderSection } from "./common/header_section";
-import { ProjectsPage } from "./projects_page";
+import { MenuSection } from "./menu_section";
 
-export class HomePage extends HeaderSection {
-  constructor() {
-    super();
-    this.projectsLink = "#Projects a";
-    this.welcomePageHeader = "#welcome-page-header";
-    cy.get(this.welcomePageHeader).should("be.visible");
+export class HeaderSection extends MenuSection {
+  constructor(path) {
+    super(path);
+    this.profileAnchor = "#user_dropdown > .dropdown-toggle";
+    this.logoutAnchor = "#logout > a";
   }
 
   clickProjects() {
