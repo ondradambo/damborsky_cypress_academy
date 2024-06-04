@@ -13,6 +13,15 @@ export class LoginPage {
     this.logoImg = ".login-page-logo img";
   }
 
+  usernameInputIsVisible() {
+    cy.get(this.usernameInput).should("be.visible");
+    return this;
+  }
+
+  usernameHaveValue(username) {
+    cy.get(this.usernameInput).type(username).should("have.value", username);
+  }
+
   usernameHavePlaceholder(placeholder) {
     cy.get(this.usernameInput).should("have.attr", "placeholder", placeholder);
   }
@@ -51,7 +60,6 @@ export class LoginPage {
     cy.get(this.usernameInput).type(username);
     return this;
   }
-
   typePassword(password) {
     cy.get(this.passwordInput).type(password);
     return this;
