@@ -1,14 +1,20 @@
+import { LoginPage } from "../login_page";
 import { MenuSection } from "./menu_section";
 
 export class HeaderSection extends MenuSection {
-  constructor(path) {
-    super(path);
-    this.profileAnchor = "#user_dropdown > .dropdown-toggle";
-    this.logoutAnchor = "#logout > a";
+  constructor() {
+    super();
+    this.profileButton = "#user_dropdown";
+    this.logoutButton = "#logout";
   }
 
-  clickProjects() {
-    cy.get(this.projectsLink).click();
-    return new ProjectsPage();
+  clickProfile() {
+    cy.get(this.profileButton).click();
+    return this;
+  }
+
+  clickLogout() {
+    cy.get(this.logoutButton).click();
+    return new LoginPage();
   }
 }
