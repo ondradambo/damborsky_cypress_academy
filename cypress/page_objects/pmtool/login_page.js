@@ -1,3 +1,4 @@
+import { HeaderSection } from "./common/header_section";
 import { HomePage } from "./home_page";
 import { LostPasswordPage } from "./lost_password_page";
 
@@ -60,6 +61,7 @@ export class LoginPage {
     cy.get(this.usernameInput).type(username);
     return this;
   }
+
   typePassword(password) {
     cy.get(this.passwordInput).type(password);
     return this;
