@@ -1,18 +1,14 @@
-import { LoginPage } from "./login_page";
+import { HeaderSection } from "./common/header_section";
 
-export class HomePage {
+export class HomePage extends HeaderSection {
   constructor() {
-    this.profileButton = "#user_dropdown";
-    this.logoutButton = "#logout";
-  }
-
-  clickProfile() {
-    cy.get(this.profileButton).click();
-    return this;
-  }
-
-  clickLogout() {
-    cy.get(this.logoutButton).click();
-    return new LoginPage();
+    super("module=dashboard/dashboard");
+    this.welcomePageHeader = "#welcome-page-header";
+    // ! Nemůžeme použít kvůli BasePage, pokud zavoláme visit(), potom ještě na HomePage nejsme a v rámci konstruktoru se nám již vyhodnotí assert, který spadne (protože jsme v aplikaci na jiné stránce)
+    // cy.get(this.welcomePageHeader).should("be.visible");
+    // * Možné řešení
+    // if (!isPageDirectlyOpen) {
+    //   cy.get(this.welcomePageHeader).should("be.visible");
+    // }
   }
 }

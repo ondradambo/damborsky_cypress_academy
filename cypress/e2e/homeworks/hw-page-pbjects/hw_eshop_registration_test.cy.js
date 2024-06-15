@@ -1,5 +1,5 @@
-import { HomePage } from "../../../page_objects/eshop/home_page";
-import { RegistrationPage } from "../../../page_objects/eshop/registration_page";
+import { HomePage } from "../../../page_objects/eshop-tredgate/eshop_page";
+import { RegistrationPage } from "../../../page_objects/eshop-tredgate/registration_page";
 
 describe("Eshop Registration Test", () => {
   const homePage = new HomePage();

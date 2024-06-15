@@ -1,9 +1,13 @@
 import { LoginPage } from "../../../page_objects/pmtool/login_page";
 
-describe("Mocha tests", () => {
+describe("Mocha Tests", () => {
   beforeEach(() => {
     cy.viewport(800, 600);
     cy.log("Běžím před každým testem.");
+  });
+
+  afterEach(() => {
+    cy.log("Běžím po konci každého testu.");
   });
 
   it("Visit pmtool", () => {
