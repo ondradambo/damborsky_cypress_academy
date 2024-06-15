@@ -35,4 +35,5 @@ constructor(projectId = "") {
     cy.xpath(this.statusDivXpath).should("have.text", status);
     return this;
   }
+
 }

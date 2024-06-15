@@ -14,11 +14,15 @@ describe("Mocha Tests", () => {
     new LoginPage().openPmtool();
   });
 
-  it("Visit pmtool and login", () => {
+  it("Pmtool login", () => {
     new LoginPage()
       .openPmtool()
-      .typeUsername("cypress_zima_2024")
-      .typePassword("Zima2024Cypress")
+      .typeUsername("username")
+      .typePassword("password")
       .clickLogin();
+  });
+
+  afterEach(() => {
+    cy.log("Běžím po dokončení každého testu.");
   });
 });
