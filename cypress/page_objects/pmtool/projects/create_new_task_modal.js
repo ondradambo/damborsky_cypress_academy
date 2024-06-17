@@ -1,3 +1,5 @@
+
+// Page object
 import { TasksPage } from "./tasks_page";
 
 export class CreateNewTaskModal {

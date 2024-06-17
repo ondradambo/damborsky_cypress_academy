@@ -1,12 +1,13 @@
+// definování třídy (název stejný jako soubor)
 export class GeneralPOPage {
-  // definování třídy (název stejný jako soubor)
+  // ve třídě je konstruktor (většinou prázdný) s atributama
   constructor() {
-    // ve třídě je konstruktor (většinou prázdný) s atributama
-    this.someElement = "selector"; // do konstruktoru dáváme jednotl.	selektory elementů na stránce (atribut = hodnota)
+    // do konstruktoru dáváme jednotl.	selektory elementů na stránce (atribut = hodnota)
+    this.someElement = "selector";
   }
-
+  // nějaká akce (metoda?)
   actionWIthElement() {
-    // nějaká akce (metoda?), standardně používáme cy.get(this.someElement)
+    // standardně používáme cy.get(this.someElement)
     cy.log(this.someElement);
   }
 }
