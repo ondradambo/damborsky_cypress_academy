@@ -9,6 +9,7 @@ constructor(projectId = "") {
     this.dateAddedTdXPath = '//th[text()="Date Added"]/../td';
     this.createdBySpanXPath = '//th[text()="Created By"]/..//span';
     this.statusDivXpath = '//th[text()="Status"]/..//div';
+    this.priorityDivXpath = '//th[text()="Priority"]/..//div';
   }
 
   projectNameHaveText(projectName) {
@@ -36,4 +37,8 @@ constructor(projectId = "") {
     return this;
   }
 
+  priorityHaveText(priority) {
+    cy.xpath(this.priorityDivXpath).should("have.text", priority);
+    return this;
+  }
 }
