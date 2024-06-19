@@ -6,6 +6,11 @@ export class HeaderSection extends MenuSection {
     super();
     this.profileButton = "#user_dropdown";
     this.logoutButton = "#logout";
+    this.usernameSpan = "-username";
+  }
+
+  nameContainText(username) {
+    cy.get(this.usernameSpan).should("contain.text"); //TODO doplnit od Petra z branche "ddt"
   }
 
   clickProfile() {

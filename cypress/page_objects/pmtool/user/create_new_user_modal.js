@@ -37,5 +37,7 @@ export class CreateNewUserModal {
   clickSave() {
     this.saveButton.get().click();
     return new UsersPage();
+
+    //TODO doplnit firstName? a lastName? od Petra z branche "ddt"
   }
 }
